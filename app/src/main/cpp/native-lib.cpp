@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "client.h"
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
 
 /**
  *
@@ -79,6 +81,21 @@ extern "C" {
     string sData = jstring2string(env, data);
     k.sendData((int) sock, sData);
   }
+
+    JNIEXPORT void JNICALL
+    Java_snu_nxc_testtcp_ClientAgent_sendObject(
+            JNIEnv *env,
+            jobject instance,
+            jint sock,
+            jstring data,
+            jstring filePath,
+            jstring externalPath) {
+        sclient k;
+        string sData = jstring2string(env, data);
+        string sPath = jstring2string(env, filePath);
+        string ePath = jstring2string(env, externalPath);
+        k.sendObject((int) sock, sData, sPath, ePath);
+    }
 
   /**
    *

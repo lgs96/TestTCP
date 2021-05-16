@@ -2,6 +2,7 @@ package snu.nxc.testtcp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
@@ -9,11 +10,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.File;
+
 import snu.nxc.testtcp.ClientAgent.ClientAgentListener;
 
 public class MainActivity extends AppCompatActivity {
-    
-    private ClientAgent mClientAgent;
+
+	Context context = MainActivity.this;
+
+	private ClientAgent mClientAgent;
     private Button mSendingButton;
     private Button mReceivingButton;
     private Button mDisconnectButton;
@@ -60,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 					      Integer.parseInt(mIntervalEdit.getText().toString()),
 					      mSaveEdit.getText().toString(),
 					      mInterfaceEdit.getText().toString(),
-					      mTestingListener);
+					      mTestingListener,  context);
 		    saveConfig();
 		    break;
 		case R.id.btn_receiving:
