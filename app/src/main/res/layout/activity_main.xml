@@ -30,9 +30,9 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="8dip"
-      android:textSize="16dip"
+      android:hint="100 KB"
       android:inputType="number"
-      android:hint="60 (sec)"/>
+      android:textSize="16dip" />
 
   <EditText
       android:id="@+id/edit_save"

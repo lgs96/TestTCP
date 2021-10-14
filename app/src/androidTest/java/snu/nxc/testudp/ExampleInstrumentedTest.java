@@ -1,4 +1,4 @@
-package snu.nxc.testtcp;
+package snu.nxc.testudp;
 
 import android.content.Context;
 
