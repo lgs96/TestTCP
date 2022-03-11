@@ -26,13 +26,31 @@
       android:hint="Port Number"/>
 
   <EditText
+      android:id="@+id/edit_size"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dip"
+      android:hint="100 KB"
+      android:inputType="number"
+      android:textSize="16dip" />
+
+  <EditText
       android:id="@+id/edit_interval"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="8dip"
-      android:textSize="16dip"
+      android:hint="33 (ms)"
       android:inputType="number"
-      android:hint="60 (sec)"/>
+      android:textSize="16dip" />
+
+  <EditText
+      android:id="@+id/edit_duration"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dip"
+      android:hint="10 (#)"
+      android:inputType="number"
+      android:textSize="16dip" />
 
   <EditText
       android:id="@+id/edit_save"

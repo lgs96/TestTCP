@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 public class ConfigUtil {
 
     public static final String KEY_SESSION_PREFERENCE = "keys2";
+    public static final String keys2Size = "keys2Size";
     public static final String keys2Interval = "keys2Interval";
+    public static final String keys2Duration = "keys2Duration";
     public static final String keys2Hostname = "keys2Hostname";
     public static final String keys2SaveName = "keys2SaveName";    
     public static final String keys2Interface = "keys2Interface";    
@@ -14,8 +16,16 @@ public class ConfigUtil {
     public static final String keys2Timeout = "keys2Timeout";
     public static final String keys2Skip = "keys2Skip";
 
-    public static int getInterval(Context context) {
+    public static int getSize (Context context){
+        return getIntegerValue(context, keys2Size);
+    }
+
+    public static int getInterval (Context context) {
         return getIntegerValue(context, keys2Interval);
+    }
+
+    public static int getDuration (Context context){
+        return getIntegerValue(context, keys2Duration);
     }
 
     public static int getPort(Context context) {
@@ -42,8 +52,16 @@ public class ConfigUtil {
         return getIntegerValue(context, keys2Skip);
     }
 
-    public static void setInterval(Context context, int interval) {
+    public static void setSize (Context context, int size){
+        saveIntegerValue(context, keys2Size, size);
+    }
+
+    public static void setInterval (Context context, int interval) {
         saveIntegerValue(context, keys2Interval, interval);
+    }
+
+    public static void setDuration (Context context, int duration){
+        saveIntegerValue(context, keys2Duration, duration);
     }
 
     public static void setPort(Context context, int port) {
@@ -78,9 +96,21 @@ public class ConfigUtil {
         return getPrefs(context).getInt(name, 0);
     }
 
+    public static double getDoubleValue(Context context, String name){
+        String double_string = getPrefs(context).getString(name, "0");
+        double value =Double.parseDouble(double_string);
+        return value;
+    }
+
     public static void saveIntegerValue(Context context, String name, int value) {
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putInt(name, value);
+        editor.commit();
+    }
+
+    public static void saveDoubleValue(Context context, String name, String value){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putString(name, value);
         editor.commit();
     }
 
