@@ -1,7 +1,7 @@
 # TestTCP
 
 ## Run server
-- python server/server.py
+- python tcp_server.py <interface> <port> ex) python tcp_server.py enp4s0 8888
 
 ## Run client
 - build android project
