@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 31
     buildToolsVersion "31.0.1"
-    namespace 'org.goodsol'
+    namespace 'snu.nxc.testtcp'
 
     defaultConfig {
         applicationId "snu.nxc.testtcp"
