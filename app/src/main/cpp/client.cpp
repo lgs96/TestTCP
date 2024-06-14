@@ -219,7 +219,7 @@ string sclient::recvData(int sock) {
                 gettimeofday(&start, NULL);
                 time_t current_milli = start.tv_sec*1000 + start.tv_usec/1000;
 
-                int download_completion_time = (int)(current_milli - (long)start_time);
+                int download_completion_time = (int)(current_milli - (long)first_byte_time);
 
                 __android_log_print(ANDROID_LOG_INFO, "recvData", "end msg idx %u %s %ld", end_msg_idx, msg.c_str(), current_milli);
                 __android_log_print(ANDROID_LOG_INFO, "recvData", "object tx time: %u", download_completion_time);
