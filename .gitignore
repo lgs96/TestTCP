@@ -13,3 +13,6 @@
 /server/data
 .externalNativeBuild
 .cxx
+/Test-sersver/downlink_data
+/Test-sersver/uplink_data
+/Test-sersver/result
